@@ -5,6 +5,7 @@ import calculos as calc
 import pandas as pd
 import database
 
+
 def main():
     print('Buscando dados em https://www.fundsexplorer.com.br/', end='...')
     temporizador = time.time()
@@ -45,17 +46,21 @@ def main():
     # print(f'Inserindo dados na coleção {colecao.name}', end='...')
     # database.inserir_df(colecao, df)
     # temporizador = calcula_tempo(temporizador)
+    #
+    # print(f'Existem agora {colecao.count_documents({})} documentos na coleção {colecao.name}')
 
     # print(f'Limpando dados da coleção {colecao.name}', end='...')
     # database.limpar_colecao(colecao)
     # temporizador = calcula_tempo(temporizador)
 
-    #df.to_excel(f'analiseFIIs_{time.strftime("%Y%m%d")}.xlsx', engine='xlsxwriter')
+    # df.to_excel(f'analiseFIIs_{time.strftime("%Y%m%d")}.xlsx', engine='xlsxwriter')
+
 
 def calcula_tempo(tempo_inicial):
     tempo_final = time.time()
     tempo_total = (tempo_final - tempo_inicial) * 1000
     print(f' ({tempo_total:.2f}ms)')
     return tempo_final
+
 
 main()
